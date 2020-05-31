@@ -105,6 +105,7 @@
             this.downloadFaveArtistsBG = new System.ComponentModel.BackgroundWorker();
             this.artSizeSelect = new System.Windows.Forms.ComboBox();
             this.artSizeLabel = new System.Windows.Forms.Label();
+            this.downloadFeaturedBG = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.albumArtPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
@@ -966,6 +967,10 @@
             this.artSizeLabel.TabIndex = 97;
             this.artSizeLabel.Text = "Embedded Art Size:                                             px";
             // 
+            // downloadFeaturedBG
+            // 
+            this.downloadFeaturedBG.DoWork += new System.ComponentModel.DoWorkEventHandler(this.downloadFeaturedBG_DoWork);
+            // 
             // QobuzDownloaderX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1133,6 +1138,7 @@
         private System.ComponentModel.BackgroundWorker downloadFaveArtistsBG;
         private System.Windows.Forms.ComboBox artSizeSelect;
         private System.Windows.Forms.Label artSizeLabel;
+        private System.ComponentModel.BackgroundWorker downloadFeaturedBG;
     }
 }
 
