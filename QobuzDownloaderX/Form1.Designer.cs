@@ -106,6 +106,7 @@
             this.artSizeSelect = new System.Windows.Forms.ComboBox();
             this.artSizeLabel = new System.Windows.Forms.Label();
             this.downloadFeaturedBG = new System.ComponentModel.BackgroundWorker();
+            this.PopRockCb = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.albumArtPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
@@ -971,12 +972,28 @@
             // 
             this.downloadFeaturedBG.DoWork += new System.ComponentModel.DoWorkEventHandler(this.downloadFeaturedBG_DoWork);
             // 
+            // PopRockCb
+            // 
+            this.PopRockCb.AccessibleDescription = "PopRockCB";
+            this.PopRockCb.AccessibleName = "PopRockCB";
+            this.PopRockCb.AutoSize = true;
+            this.PopRockCb.BackColor = System.Drawing.Color.Transparent;
+            this.PopRockCb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PopRockCb.Location = new System.Drawing.Point(12, 563);
+            this.PopRockCb.Name = "PopRockCb";
+            this.PopRockCb.Size = new System.Drawing.Size(76, 17);
+            this.PopRockCb.TabIndex = 98;
+            this.PopRockCb.Text = "Pop/Rock";
+            this.PopRockCb.UseVisualStyleBackColor = false;
+      
+            // 
             // QobuzDownloaderX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(938, 733);
+            this.ClientSize = new System.Drawing.Size(948, 733);
+            this.Controls.Add(this.PopRockCb);
             this.Controls.Add(this.artSizeSelect);
             this.Controls.Add(this.artSizeLabel);
             this.Controls.Add(this.hiddenTextPanel);
@@ -1139,6 +1156,7 @@
         private System.Windows.Forms.ComboBox artSizeSelect;
         private System.Windows.Forms.Label artSizeLabel;
         private System.ComponentModel.BackgroundWorker downloadFeaturedBG;
+        private System.Windows.Forms.CheckBox PopRockCb;
     }
 }
 

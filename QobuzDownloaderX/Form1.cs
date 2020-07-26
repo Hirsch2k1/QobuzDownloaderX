@@ -59,6 +59,8 @@ namespace QobuzDownloaderX
         public int MaxLength { get; set; }
         public int devClickEggThingValue { get; set; }
 
+        public int poprockid { get; set; }
+
         searchForm searchF = new searchForm();
 
         private void Form1_Load(object sender, EventArgs e)
@@ -248,8 +250,7 @@ namespace QobuzDownloaderX
                 e.SuppressKeyPress = true;
             }
         }
-
-        private void createURL(object sender, EventArgs e)
+         private void createURL(object sender, EventArgs e)
         {
             // Create unix timestamp for "request_ts=" and hashing to make request signature.
             Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
@@ -301,12 +302,7 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.Text = String.Empty));
                         output.Invoke(new Action(() => output.AppendText("Failed to get streaming URL. Error information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(getError)));
-                        mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                        
                     }
                 }
                 else
@@ -1531,12 +1527,8 @@ namespace QobuzDownloaderX
                                 output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                                 output.Invoke(new Action(() => output.AppendText(error)));
                                 output.Invoke(new Action(() => output.AppendText("\r\n\r\nIf some tracks aren't available for streaming on the album you're trying to download, try to manually download the available tracks individually.")));
-                                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                                return;
+                                
+                                
                             }
 
                             // Delete image file used for tagging
@@ -1565,12 +1557,8 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.Text = String.Empty));
                         output.Invoke(new Action(() => output.AppendText("Failed to download (First Phase). Error information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(error)));
-                        mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                        
+                        
                     }
                 }
             }
@@ -1581,12 +1569,8 @@ namespace QobuzDownloaderX
                 output.Invoke(new Action(() => output.Text = String.Empty));
                 output.Invoke(new Action(() => output.AppendText("Artist Download ERROR. Information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
-                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+               
+                
             }
             #endregion
         }
@@ -2662,12 +2646,8 @@ namespace QobuzDownloaderX
                                 output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                                 output.Invoke(new Action(() => output.AppendText(error)));
                                 output.Invoke(new Action(() => output.AppendText("\r\n\r\nIf some tracks aren't available for streaming on the album you're trying to download, try to manually download the available tracks individually.")));
-                                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                                return;
+                                
+                                
                             }
 
                             // Delete image file used for tagging
@@ -2696,12 +2676,7 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.Text = String.Empty));
                         output.Invoke(new Action(() => output.AppendText("Failed to download (First Phase). Error information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(error)));
-                        mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                        
                     }
                 }
             }
@@ -2713,11 +2688,7 @@ namespace QobuzDownloaderX
                 output.Invoke(new Action(() => output.AppendText("Label Download ERROR. Information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
                 mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+             
             }
             #endregion
         }
@@ -3791,12 +3762,7 @@ namespace QobuzDownloaderX
                                 output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                                 output.Invoke(new Action(() => output.AppendText(error)));
                                 output.Invoke(new Action(() => output.AppendText("\r\n\r\nIf some tracks aren't available for streaming on the album you're trying to download, try to manually download the available tracks individually.")));
-                                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                                return;
+                                
                             }
 
                             // Delete image file used for tagging
@@ -3825,12 +3791,7 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.Text = String.Empty));
                         output.Invoke(new Action(() => output.AppendText("Failed to download (First Phase). Error information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(error)));
-                        mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                     
                     }
                 }
             }
@@ -3841,12 +3802,7 @@ namespace QobuzDownloaderX
                 output.Invoke(new Action(() => output.Text = String.Empty));
                 output.Invoke(new Action(() => output.AppendText("Label Download ERROR. Information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
-                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+                
             }
             #endregion
         }
@@ -4898,12 +4854,7 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.AppendText("\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(error)));
-                        mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                        
                     }
 
                     // Delete image file used for tagging
@@ -4932,12 +4883,7 @@ namespace QobuzDownloaderX
                 //output.Invoke(new Action(() => output.Text = String.Empty));
                 output.Invoke(new Action(() => output.AppendText("Failed to download (First Phase). Error information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
-                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+                
             }
             #endregion
         }
@@ -4949,7 +4895,7 @@ namespace QobuzDownloaderX
             string loc = folderBrowserDialog.SelectedPath;
 
             trackIdString = albumId;
-            WebRequest artistwr = WebRequest.Create("https://www.qobuz.com/api.json/0.2/album/getFeatured?app_id=" + appid + "&type=new-releases");
+            WebRequest artistwr = WebRequest.Create("https://www.qobuz.com/api.json/0.2/album/getFeatured?app_id=" + appid + "&type=new-releases-full&genre-ids=112,64,127,80,94,91,10&limit=99999");
 
             // Empty output, then say Starting Downloads.
             output.Invoke(new Action(() => output.Text = String.Empty));
@@ -6006,12 +5952,7 @@ namespace QobuzDownloaderX
                                 output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                                 output.Invoke(new Action(() => output.AppendText(error)));
                                 output.Invoke(new Action(() => output.AppendText("\r\n\r\nIf some tracks aren't available for streaming on the album you're trying to download, try to manually download the available tracks individually.")));
-                                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                                return;
+                                
                             }
 
                             // Delete image file used for tagging
@@ -6041,11 +5982,7 @@ namespace QobuzDownloaderX
                         output.Invoke(new Action(() => output.AppendText("Failed to download (First Phase). Error information below.\r\n\r\n")));
                         output.Invoke(new Action(() => output.AppendText(error)));
                         mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                        flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                        flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                        flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                        downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                        return;
+                        
                     }
                 }
             }
@@ -6056,12 +5993,7 @@ namespace QobuzDownloaderX
                 output.Invoke(new Action(() => output.Text = String.Empty));
                 output.Invoke(new Action(() => output.AppendText("Label Download ERROR. Information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
-                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+                
             }
             #endregion
         }
@@ -7034,12 +6966,7 @@ namespace QobuzDownloaderX
                 output.Invoke(new Action(() => output.AppendText("\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText("Track Download ERROR. Information below.\r\n\r\n")));
                 output.Invoke(new Action(() => output.AppendText(error)));
-                mp3Checkbox.Invoke(new Action(() => mp3Checkbox.Visible = true));
-                flacLowCheckbox.Invoke(new Action(() => flacLowCheckbox.Visible = true));
-                flacMidCheckbox.Invoke(new Action(() => flacMidCheckbox.Visible = true));
-                flacHighCheckbox.Invoke(new Action(() => flacHighCheckbox.Visible = true));
-                downloadButton.Invoke(new Action(() => downloadButton.Enabled = true));
-                return;
+               
             }
 
             // Delete image file used for tagging
@@ -7184,6 +7111,10 @@ namespace QobuzDownloaderX
         {
             Settings.Default.commentText = commentTextbox.Text;
             Settings.Default.Save();
+        }
+        private void PopRockCB_CheckedChanged(object sender, EventArgs e)
+        {
+            poprockid = 112;
         }
         #endregion
 
@@ -7393,7 +7324,5 @@ namespace QobuzDownloaderX
             Settings.Default.savedArtSize = artSizeSelect.SelectedIndex;
             Settings.Default.Save();
         }
-
-    
     }
 }
